@@ -4,7 +4,6 @@
 \usepackage{verbatim}
 \usetheme{uniud}
 
-\linespread{1.1}
 %%% Bibliography
 \usepackage[style=authoryear,backend=biber]{biblatex}
 \addbibresource{bibliography.bib}
@@ -22,9 +21,13 @@
 % Fill the vertical space in a slide (to put text at the bottom)
 \newcommand{\framefill}{\vskip0pt plus 1filll}
 
-% \newcommand{\marker}[2][UniOrange]{{\sethlcolor{#1}\hl{#2}}}
-\newcommand{\marker}[2][UniOrange]{{\SoulColor\sethlcolor{#1}\hl{#2}}}
+% ============================== Adjust the template here ====================================
 
+\linespread{1}
+\newcommand{\marker}[2][UniOrange]{{\sethlcolor{#1}\hl{#2}}}
+% \newcommand{\marker}[2][UniOrange]{{\SoulColor\sethlcolor{#1}\hl{#2}}}
+
+% ============================================================================================
 \title[Short Title]{Your Title Here}
 \date[\today]{\today}
 \author[Chenglei Wu]{
@@ -40,5 +43,4 @@
 \begin{document}
 \input{frames/frames.tex}
 \input{frames/templates.tex}
-
 \end{document}

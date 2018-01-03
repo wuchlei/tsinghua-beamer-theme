@@ -15,7 +15,9 @@ full compile, include reference, table of contents, etc
 remove all trash
 
 Notes:
-**marker** command has two definitions. Try the other if anything goes wrong.
+1. **marker** command has two definitions. Try the other if anything goes wrong.
+2. Edit `\linespread{1}` to control line spacing
+
 ```
 % \newcommand{\marker}[2][UniOrange]{{\sethlcolor{#1}\hl{#2}}}
 \newcommand{\marker}[2][UniOrange]{{\SoulColor\sethlcolor{#1}\hl{#2}}}
