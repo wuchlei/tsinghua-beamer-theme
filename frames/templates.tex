@@ -1,0 +1,304 @@
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+\section{Before you start}
+\begin{frame}{Overleaf users}
+
+\begin{alertblock}{Warning}
+You can ignore this slide if you're \textbf{not} working with Overleaf.
+\end{alertblock}
+
+\vskip 0.5cm
+
+Overleaf, Beamer and Biber do not always get along well together. For this reason, if you make a mistake while writing this presentation, in the drop-down error message you'll \textbf{always} get Biber-related error messages.
+
+\vskip 0.5cm
+
+Luckily, you just have to click on ``\texttt{go to first error/warning}'' and the UI will scroll to the line containing your mistake.
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Compiling}
+
+\begin{alertblock}{Warning}
+You can ignore this slide if you're working with Overleaf.
+\end{alertblock}
+
+To compile this deck you'll need the \texttt{biber} package. Probably your \TeX editor already supports it; if not, you will easily find online the instructions to install it.
+
+\vskip 0.5cm
+
+If you're not using an editor, you can compile this presentation using the command line by running:
+
+\begin{verbatim}
+$ pdflatex main.tex
+$ biber main.bcf
+$ pdflatex main.tex
+$ pdflatex main.tex
+\end{verbatim}
+
+
+\end{frame}
+
+\section{Colors}
+
+\begin{frame}{Colors}
+
+For this template we defined four colors, following the Style Manual of the University of Udine:
+\begin{itemize}
+\item \textcolor{white}{\marker{\texttt{UniOrange}}}
+\item \textcolor{white}{\marker[UniBlue]{\texttt{UniBlue}}}
+\item \textcolor{white}{\marker[UniBrown]{\texttt{UniBrown}}}
+\item \textcolor{white}{\marker[UniGold]{\texttt{UniGold}}}
+\end{itemize}
+
+\vskip 0.5cm
+
+You can use these colors as you want in your presentation. For example, you can \textbf{\textcolor{UniGold}{color the text in gold}} by writing \texttt{\textbackslash\{UniGold\}\{my gold text\}}.
+
+\vskip 0.5cm
+
+We also redefined many of the most common \LaTeX{} and Beamer commands, like \texttt{itemize}, \texttt{block}, etc. You will see samples of these commands in the following slides.
+
+\end{frame}
+
+\section{Blocks}
+
+\begin{frame} 
+\frametitle{This is a page with a title and a subtitle} 
+\framesubtitle{And also some blocks.} 
+\begin{block}{Goal of the mission}
+Shoot in the Death Star's exhaust port and destroy it before the it can fire on the Rebel base.
+\end{block} 
+\begin{alertblock}{Take care!}
+TIE Fighters may chase you while approaching the target.
+\end{alertblock} 
+\begin{exampleblock}{Use the force you must}
+Remember your training with Obi-Wan, and use the Force to make the perfect shoot.
+\end{exampleblock} 
+
+\end{frame}
+
+\section{Enumerates, itemizes and description}
+
+\subsection{Enumerates and itemizes}
+
+\begin{frame}{Enumerates and itemizes}
+
+This is an example of \texttt{itemize}.
+\begin{itemize}
+    \item A long time ago in a galaxy far, far away...
+\end{itemize}
+And this is an example of \texttt{enumerate}.
+
+\begin{enumerate} 
+    \item Go to the Death Star.
+    \item Find the exhaust port.
+    \item Make the perfect shot.
+    \item Become an hero.
+\end{enumerate}
+\end{frame}
+
+\subsection{Description}
+
+\begin{frame}[fragile]
+\frametitle{Description}
+This is an example of \texttt{description}.
+
+\begin{description}
+\item<2->[Vader] \emph{I am} your father.
+\item<1->[Luke] No. No! That's not true! \textbf{That's impossible!}
+\end{description}
+
+\begin{uncoverenv}<3>
+    \vskip 0.5cm
+    And while we're here, let's have a look to \texttt{verbatim} as well, to see how we made items appear in arbitrary order:
+    \vskip 0.5cm
+    \begin{verbatim}
+\begin{description}
+    \item<2->[This is the first item] one
+    \item<1->[This is the second item] two
+\end{description}
+    \end{verbatim}
+\end{uncoverenv}
+
+\end{frame}
+
+\section{Maths}
+
+\begin{frame}{Maths}
+A formula will look like this: 
+\begin{center}
+    $x^2 + y^2 = z^2$
+\end{center}
+
+You can number equations as well:
+\begin{equation}
+1+1=2
+\end{equation}
+
+\begin{equation}
+1+1=2 \tag{custom label!}
+\end{equation}
+
+\vskip 0.5cm
+
+If you want to use the default \LaTeX{} math fonts, just go to \texttt{beamerfontthemeuniud.sty} and uncomment the line containing `\texttt{\textbackslash usefonttheme[onlymath]\{serif\}}'.
+
+\end{frame}
+
+\begin{frame}{Theorems}
+
+The usual \texttt{theorem}, \texttt{corollary}, \texttt{definition}, \texttt{definitions}, \texttt{fact}, \texttt{example} and \texttt{examples} blocks are available as well.
+
+\begin{theorem}
+There exists an infinite set.
+\end{theorem}
+\begin{proof}
+This follows from the axiom of infinity.
+\end{proof}
+\begin{example}[Natural Numbers]
+The set of natural numbers is infinite.
+\end{example}
+
+\end{frame}
+
+\section{Other blocks}
+
+\begin{frame}{Other blocks}
+
+Here we display examples of \texttt{abstract}, \texttt{verse}, \texttt{quotation}, and \texttt{quote}.
+
+\vskip 0.5cm
+
+\begin{abstract}
+This is an abstract.
+\end{abstract}
+\begin{verse}
+This is a verse.
+\end{verse}
+\begin{quotation}
+This is a quotation.
+
+\raggedleft -Han Solo
+\end{quotation}
+\begin{quote}
+A quote this is.
+
+\raggedleft -Yoda
+\end{quote}
+
+\end{frame}
+
+\section{Bibliography and Publications}
+\begin{frame}[fragile]
+\frametitle{Bibliography}
+
+You can cite an article
+\begin{itemize}
+\item normally using \texttt{\textbackslash cite}, e.g.: (\cite{article1})
+\item or display the full citation using \texttt{\textbackslash fullcite}, e.g.:  \fullcite{article1}
+\end{itemize}
+
+\vskip 0.5cm
+Look at the code of the following slide to see how to automatically split the bibliography on many slides. You can also use \texttt{\textbackslash nocite\{*\}} to display the non-cited publications as well.
+
+\end{frame}
+
+\begin{frame}[t,allowframebreaks]
+\frametitle{Bibliography}
+
+\nocite{*} % will display the non-cited publications as well. Useful for a publication list.
+
+\printbibliography
+
+\end{frame}
+
+\section{Bonus Commands}
+
+\begin{frame}[fragile]
+\frametitle{Framecard}
+
+You can display a frame with a colored background and a huge text in the center using the command \texttt{\textbackslash framecard}.
+\vskip 0.5cm 
+For example, you can write:
+\begin{verbatim}
+\framecard{A SECTION\\TITLE}
+\end{verbatim}
+
+This will display a frame with a orange background and the phrase "A SECTION TITTLE" in the center. You can also use a custom color with \texttt{\textbackslash framecard}:
+\begin{verbatim}
+\framecard{A SECTION\\TITLE}
+\framecard[UniBlue]{A SECTION TITLE\\
+WITH A CUSTOM COLOR}
+\end{verbatim}
+You can see the results of the commands above in the following slides.
+
+\end{frame}
+
+\framecard{A SECTION\\TITLE}
+\framecard[UniBlue]{A SECTION TITLE\\WITH A CUSTOM COLOR}
+
+\begin{frame}[fragile]
+\frametitle{Framepic}
+
+You can display a frame with a background image using the command \texttt{\textbackslash framepic}. The image will be \textbf{adapted vertically} to fit the the frame. 
+
+For example, you can write:
+\begin{verbatim}
+\framepic{pictures/darth}{
+    \framefill
+    \textcolor{white}{Luke,\\I am your supervisor}
+    \vskip 0.5cm
+}
+\end{verbatim}
+
+Alternatively, to make the background 50\% transparent, you can write \texttt{\textbackslash framepic[0.5]\{pictures/darth\}...}
+
+
+You can see the results of the commands above in the following slides.
+
+\end{frame}
+
+
+\framepic{pictures/darth}{
+    \framefill
+    \textcolor{white}{Luke,\\I am your supervisor}
+    \vskip 0.5cm
+}
+
+\framepic[0.5]{pictures/darth}{
+    \vfill
+    \begin{flushright}
+    \textcolor{red}{\textbf{Right-aligned text with\\Semi-transparent background}}
+    \end{flushright}	
+}
+
+\begin{frame}[t,fragile,allowframebreaks]
+\frametitle{Other bonus commands}
+
+We provide two other bonus commands:
+\begin{description}
+\item[\texttt{pdfnewline}] you can use \texttt{\textbackslash pdfnewline} to avoid the annoying \texttt{hyperref} related warnings when using newlines in the document's title, author, etc. For example, in this presentation the author is defined as:
+\begin{verbatim}
+\author[Luke Skywalker]{
+    Luke Skywalker, Ph.D.
+    \pdfnewline
+    \texttt{luke.skywalker@uniud.it}
+}
+\end{verbatim}
+\item[\texttt{marker}] you can use \texttt{\textbackslash marker} to highlight some text. The default color is \marker{orange}, but you can also \marker[UniBlue]{use a custom color}. For example:
+\begin{verbatim}
+\marker{Default color}
+\marker[UniBlue]{Custom Color}
+\end{verbatim}
+\item[\texttt{framefill}] you can use \texttt{\textbackslash framefill} to put the text at the bottom of a slide by filling all the vertical space.
+\end{description}
+
+\end{frame}

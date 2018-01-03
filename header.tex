@@ -1,0 +1,9 @@
+% Header file with some shared commands.
+% This allows to use the uniud beamer theme both 
+% within the provided main.tex template or in a new, % custom beamer presentation. 
+\ifdefined\UNIUD
+% header already included
+\else
+\newcommand*{\UNIUD}{}
+
+\fi

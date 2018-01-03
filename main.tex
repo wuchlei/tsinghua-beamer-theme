@@ -1,0 +1,42 @@
+\documentclass[usenames,dvipsnames,UTF8]{beamer}
+\usepackage[UTF8]{ctex}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usetheme{uniud}
+
+\linespread{1.1}
+%%% Bibliography
+\usepackage[style=authoryear,backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+%%% Suppress biblatex annoying warning
+\usepackage{silence}
+\WarningFilter{biblatex}{Patching footnotes failed}
+
+\usepackage{external_font}
+\RequirePackage{fontawesome}
+
+%%% Some useful commands
+% pdf-friendly newline in links
+\newcommand{\pdfnewline}{\texorpdfstring{\newline}{ }} 
+% Fill the vertical space in a slide (to put text at the bottom)
+\newcommand{\framefill}{\vskip0pt plus 1filll}
+
+\title[Short Title]{Your Title Here}
+\date[\today]{\today}
+\author[Chenglei Wu]{
+  Chenglei Wu, Master Student.
+  \pdfnewline
+  % \texttt{wcl15@mails.tsinghua.edu.cn}
+  \texttt{\faEnvelope\ wcl15@mails.tsinghua.edu.cn}
+  \pdfnewline
+  \texttt{\faWeixin\ wuchenglei1993}
+}
+\institute{CS Department, Tsinghua University}
+
+\begin{document}
+
+\input{frames/frames.tex}
+\input{frames/templates.tex}
+
+\end{document}

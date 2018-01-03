@@ -1,0 +1,72 @@
+\mode<presentation>
+
+% Frame title
+\defbeamertemplate*{frametitle}{uniud}[1][]
+{
+
+\begin{tikzpicture}
+\useasboundingbox (0,-0.05) rectangle(\the\paperwidth,0.95);
+
+% Three-colored line
+ \fill[color=UniOrange] (-1,0) rectangle(0,1);
+ \fill[color=UniBlue] (0,0) rectangle(1,1);
+ \fill[color=UniBrown] (1,0) rectangle(\the\paperwidth,1);
+ 
+ % Logo in the orange box
+ \node[inner sep=0pt] (logo) at (-0.5,0.5){\includegraphics[width=0.85cm]{pictures/full-logo}};
+\end{tikzpicture}
+
+% If we don't have a subtitle, put the title
+% at the center of the header
+\ifx\insertframesubtitle\@empty
+
+  \begin{textblock*}{10cm}(2.2cm,0.3cm)
+  {\usebeamercolor[fg]{frametitle}\usebeamerfont{frametitle}\insertframetitle}
+  \end{textblock*}
+
+\else
+% If we have both title and subtitle, stack them
+  \begin{textblock*}{10cm}(2.2cm,0.1cm)
+  {\usebeamercolor[fg]{frametitle}\usebeamerfont{frametitle}\insertframetitle}
+  \end{textblock*}
+
+  \begin{textblock*}{10cm}(2.2cm,0.6cm)
+  {\usebeamercolor[fg]{framesubtitle}\usebeamerfont{framesubtitle}\insertframesubtitle}
+  \end{textblock*}
+
+\fi
+
+}
+
+% Frame footer
+\setbeamertemplate{footline}
+{
+\ifnum\thepage>1
+\begin{tikzpicture}
+\useasboundingbox (0,0) rectangle(\the\paperwidth,1);
+
+% Three-colored line
+\fill[color=UniOrange] (0,1.25) rectangle(1,1.3);
+\fill[color=UniBlue] (1,1.25) rectangle(2,1.3);
+\fill[color=UniBrown] (2,1.25) rectangle(\the\paperwidth,1.3);
+
+\end{tikzpicture}
+
+\begin{textblock*}{0.9cm}(0.1cm,9.25cm)
+\raggedleft
+{\usebeamercolor[fg]{title in head/foot}\usebeamerfont{title in head/foot}\insertframenumber/\inserttotalframenumber}
+\end{textblock*}
+
+\begin{textblock*}{3cm}(2cm,9.25cm)
+{\usebeamercolor[fg]{author in head/foot}\usebeamerfont{author in head/foot}\insertshortauthor}
+\end{textblock*}
+
+\begin{textblock*}{7cm}(\dimexpr\the\paperwidth-7.8cm,9.25cm) 
+\raggedleft
+{\usebeamercolor[fg]{title in head/foot}\usebeamerfont{title in head/foot}\insertshorttitle}
+\end{textblock*}
+
+\fi % \ifnum\thepage>1
+}
+
+\mode<all>

@@ -1,0 +1,27 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{external_font}[2015/05/25 external_font Package]
+
+\RequirePackage{fontspec}
+\RequirePackage{ctex}
+
+\defaultfontfeatures{Path = fonts/zh_CN-Adobe/, Mapping=tex-text}
+
+\setCJKmainfont[
+BoldFont=AdobeSongStd-Light.otf,
+ItalicFont=AdobeKaitiStd-Regular.otf,
+SmallCapsFont=AdobeHeitiStd-Regular.otf
+]{AdobeHeitiStd-Regular.otf}
+\setCJKsansfont{AdobeHeitiStd-Regular.otf}
+\setCJKmonofont{AdobeFangsongStd-Regular.otf}
+
+\setCJKfamilyfont{zhsong}{AdobeSongStd-Light.otf}
+\setCJKfamilyfont{zhhei}{AdobeHeitiStd-Regular.otf}
+\setCJKfamilyfont{zhfs}{AdobeFangsongStd-Regular.otf}
+\setCJKfamilyfont{zhkai}{AdobeKaitiStd-Regular.otf}
+
+% \newcommand*{\songti}{\CJKfamily{zhsong}} % 宋体
+% \newcommand*{\heiti}{\CJKfamily{zhhei}}   % 黑体
+% \newcommand*{\kaishu}{\CJKfamily{zhkai}}  % 楷书
+% \newcommand*{\fangsong}{\CJKfamily{zhfs}} % 仿宋
+
+\endinput
