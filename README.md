@@ -6,6 +6,20 @@ Modification:
 2. Use local font
 3. Switch to xelatex engine
 
+Usage:
+1. make
+quick compile
+2. make compile
+full compile, include reference, table of contents, etc
+3. make clean
+remove all trash
+
+Notes:
+**marker** command has two definitions. Try the other if anything goes wrong.
+```
+% \newcommand{\marker}[2][UniOrange]{{\sethlcolor{#1}\hl{#2}}}
+\newcommand{\marker}[2][UniOrange]{{\SoulColor\sethlcolor{#1}\hl{#2}}}
+```
 
 Unofficial University of Udine Beamer Template
 ==============================================
